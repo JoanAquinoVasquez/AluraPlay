@@ -1,5 +1,5 @@
 /* Cabecera */
-.cabecera__container{
+.cabecera__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,20 +7,20 @@
     top: 0;
 }
 
-.cabecera__buscar__item{
+.cabecera__buscar__item {
     display: none;
 }
 
 /* Menu */
 
-.menu__container{
+.menu__container {
     position: fixed;
     bottom: 0%;
     height: 75px;
     width: 100%;
 }
 
-.menu__lista{
+.menu__lista {
     display: flex;
     justify-content: space-around;
     height: 100%;
@@ -30,7 +30,7 @@
     align-self: center;
 }
 
-.menu__itens{
+.menu__itens {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -39,13 +39,13 @@
 
 .menu__lista:nth-child(2),
 .menu__lista:nth-child(3),
-.menu__lista:nth-child(4){
+.menu__lista:nth-child(4) {
     display: none;
 }
 
 
 /* Seccion superior */
-.superior__seccion__container{
+.superior__seccion__container {
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -56,55 +56,67 @@
 
 /*Seccion  Videos */
 
-.videos__item{
+.videos__item {
     height: 303px;
     width: 280px;
     flex-grow: 1;
+    /* el espacio entre los elementos va a ser proporcional, no acepta valores negativos, por default es 0  */
+    /* Ancho total del contenedor: 1000px
+    Ancho de cada imagen: 200px (4x200 = ancho total de las imágenes juntas 800px)
+    Ancho disponible: 200px
+    Dividiendo el espacio disponible entre cada elemento, 200px/4 = 50px 
+    El espacio disponible se distribuye proporcionalmente, aumentando a 250px el ancho de cada una de las imágenes.
+    */
+
+
 }
 
-.videos__container{
-    display:flex;
+.videos__container {
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    
-
 }
 
 
-/* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */ 
+/* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */
 
 .descripcion-video {
     margin-top: 1rem;
     display: flex;
-    align-items: start; 
-    
+    align-items: start;
+
 }
 
 .descripcion-video img {
-    margin-right: 1rem; 
-    flex-shrink: 0;  /*  Evita que la imagen se reduzca */
+    margin-right: 1rem;
+    flex-shrink: 0;
+    /*  Evita que la imagen se reduzca */
+    /* A diferencia de la propiedad flex-grow, 
+    donde un valor mayor permite que un elemento crezca más, con la propiedad flex-shrink, 
+    cuanto mayor sea el valor, más se reducirá este elemento en comparación con sus elementos hermanos. */
     
+
 }
 
 .detalles__video {
     flex-direction: column;
-    text-align:left;
+    text-align: left;
 
 }
 
-.detalles__video h3{
+.detalles__video h3 {
     margin-bottom: 10px;
 }
 
 
 /* Rodapie */
-.rodapie__container{
+.rodapie__container {
     display: flex;
     /* flex-direction: column;
    flex-wrap: wrap; */
-   flex-flow: column wrap;
-    
-   
+    flex-flow: column wrap;
+
+
 }
 
 
@@ -112,9 +124,10 @@
 @media (min-width:834px) {
 
     /* Cabecera */
-    .cabecera__buscar__item{
+    .cabecera__buscar__item {
         display: block
     }
+
     /* Desafío Menú Lateral */
     .menu__container {
         left: 0;
@@ -122,7 +135,7 @@
         width: 74px;
         top: 80px;
     }
-    
+
     .menu__lista {
         flex-direction: column;
         justify-content: flex-start;
@@ -132,18 +145,18 @@
 
 
     /* Rodapie */
-    .rodapie__container{
+    .rodapie__container {
         justify-content: space-between;
     }
-   
+
 
 }
 
 
 
-@media (min-width:1440px ){
+@media (min-width:1440px) {
 
-    .menu__container{
+    .menu__container {
         width: 239px;
         overflow: scroll;
 
@@ -151,44 +164,38 @@
 
     .menu__lista:nth-child(2),
     .menu__lista:nth-child(3),
-    .menu__lista:nth-child(4){
+    .menu__lista:nth-child(4) {
         display: flex;
     }
 
-    .menu__lista{
+    .menu__lista {
         height: auto;
         padding: 20px 17px 20px 15px;
         gap: 15px;
-       
+
     }
 
-    .menu__lista:nth-child(3){
+    .menu__lista:nth-child(3) {
         flex-direction: column-reverse;
 
     }
-    .menu__itens{
+
+    .menu__itens {
         flex-direction: row;
         gap: 15px;
         align-items: center;
     }
 
-    .videojuegos{
+    .videojuegos {
         order: 3;
     }
 
-    .peliculas{
-        order:2;
+    .peliculas {
+        order: 2;
     }
 
-    .premium{
-        order:1;
+    .premium {
+        order: 1;
     }
-
-    
-   
-
-
-
 
 }
-
